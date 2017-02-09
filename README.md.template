@@ -9,7 +9,7 @@ Using python's `string.format` function to format strings that contain LaTeX is 
 of the LaTeX must be doubled up. For example, "\frac{1}{2}" must be written "\frac{{1}}{{2}}".
 
 `SFFormatting` is a simple string formatting module that uses `pyparsing` to parse for tokens that need to be replaced, and then uses
-the pythons's `string.format` function to actually do the replacement. The parser does not complain about extra curly brackets in the text
+the Python's `string.format` function to actually do the replacement. The parser does not complain about extra curly brackets in the text
 to be formatted, or about missing parameters. So, for example, this just works:
 
 ```
@@ -28,3 +28,8 @@ Output:
 \shell{./examples/mechanics_2.py | sed 's|^|>>> |'}
 
 ```
+
+## Installation
+
+`SSFormatting` is a single file named `sfformatting.py`. Just stick it in your script's directory, or a directory
+in your `PYTHONPATH`.
