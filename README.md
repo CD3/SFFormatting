@@ -53,6 +53,9 @@ Output:
 
 ```
 
+The modules uses Python's `string.format` function to replace tokens, so all of the usual features (and dangers)
+like format specs are available. Only the parsing is done separately.
+
 ## Installation
 
 `SSFormatting` is a single file named `sfformatting.py`. Just stick it in your script's directory, or a directory
