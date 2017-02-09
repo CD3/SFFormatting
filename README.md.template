@@ -1,0 +1,30 @@
+# Straight Forward Fromatting
+
+A simple string formatter that stays out of the way.
+
+## Motivation
+
+I write python programs and I write LaTeX documents. Sometimes I write python programs that write LaTeX documents.
+Using python's `string.format` function to format strings that contain LaTeX is a pain. All curly brackets that are part
+of the LaTeX must be doubled up. For example, "\frac{1}{2}" must be written "\frac{{1}}{{2}}".
+
+`SFFormatting` is a simple string formatting module that uses `pyparsing` to parse for tokens that need to be replaced, and then uses
+the pythons's `string.format` function to actually do the replacement. The parser does not complain about extra curly brackets in the text
+to be formatted, or about missing parameters. So, for example, this just works:
+
+```
+\shell{cat examples/mechanics_1.py}
+
+Output:
+\shell{./examples/mechanics_1.py | sed 's|^|>>> |'}
+
+```
+
+I use the LaTeX [`siunitx` package](https://www.ctan.org/pkg/siunitx?lang=en) to format units. This works too:
+```
+\shell{cat examples/mechanics_2.py}
+
+Output:
+\shell{./examples/mechanics_2.py | sed 's|^|>>> |'}
+
+```
