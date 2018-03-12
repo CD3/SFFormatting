@@ -8,8 +8,7 @@ I write python programs and I write LaTeX documents. Sometimes I write python pr
 Using python's `string.format` function to format strings that contain LaTeX is a pain. All curly brackets that are part
 of the LaTeX must be doubled up. For example, "\frac{1}{2}" must be written "\frac{{1}}{{2}}".
 
-`SFFormatting` is a simple string formatting module that uses `pyparsing` to parse for tokens that need to be replaced, and then uses
-the Python's `string.format` function to actually do the replacement. The parser does not complain about extra curly brackets in the text
+`SFFormatting` is a simple string formatting module that uses `pyparsing` to parse for tokens that need to be replaced, and then uses Python's `string.format` function to actually do the replacement. The parser does not complain about extra curly brackets in the text
 to be formatted, or about missing parameters. So, for example, this just works:
 
 ```

@@ -23,7 +23,7 @@ class SFFormatter(object):
         if self.throw:
           raise e
         if self.warn:
-          print "WARNING: failed to replace '"+exp+"' using string.format()."
+          print("WARNING: failed to replace '"+exp+"' using string.format().")
 
         return None
 
@@ -49,5 +49,9 @@ class Namespace(dict):
         dict.__init__(self,kwargs)
         self.__dict__ = self
     def fmt(self,text):
+      '''Format a string using self as context.'''
       return fmt(text, **self.__dict__)
+    def call(self,func):
+      '''Call a function with argument from self.'''
+      pass
 
