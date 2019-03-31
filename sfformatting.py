@@ -15,7 +15,6 @@ class SFFormatter(object):
   def fmt(self,text,*args,**kwargs):
 
     def replaceToken(text,loc,toks):
-      print(text,loc,toks)
       exp = toks[1]
       try:
         # use the build-in string format method
