@@ -24,3 +24,11 @@ def test_namespace():
 
   assert ns.fmt("x = {x}, y = {y}") == "x = 10, y = 20"
   assert ns.fmt("x = {x:.1f}, y = {y:.1f}") == "x = 10.0, y = 20.0"
+
+def test_formatting_strings_with_newline_chars():
+  formatter = SFFormatter()
+
+  assert formatter.fmt("A {str}.", missing="missing") == "A {str}."
+  assert formatter.fmt('''A {
+str
+}.''', missing="missing") == "A {\nstr\n}."
